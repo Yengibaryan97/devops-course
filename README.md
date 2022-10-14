@@ -1,1 +1,2 @@
-# devops-course
+# devops
+DevOps Course
