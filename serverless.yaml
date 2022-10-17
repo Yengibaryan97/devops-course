@@ -20,7 +20,7 @@ provider:
   region: eu-central-1
   vpc:
     securityGroupIds:
-      - ${ssm:/${env:ENV}/lambda-sg}
+      - sg-00ed914dc918a5cb2
     subnetIds:
       - subnet-00e084b77ea3e2a39
       - subnet-0211544261d81e46f
