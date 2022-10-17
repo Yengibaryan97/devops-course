@@ -14,16 +14,16 @@ provider:
   name: aws
   runtime: python3.7
   deploymentBucket:
-    name: ${ssm:/${env:ENV}/lambda-bucket}
-  role: ${ssm:/${env:ENV}/lambda-role-arn}
+    name: bucket
+  role: lambda_role
   stage:  ${opt:stage,'dev'}
-  region: us-east-1
+  region: eu-central-1
   vpc:
     securityGroupIds:
       - ${ssm:/${env:ENV}/lambda-sg}
     subnetIds:
-      - ${ssm:/${env:ENV}/private-subnet-1}
-      - ${ssm:/${env:ENV}/private-subnet-2}
+      - subnet-00e084b77ea3e2a39
+      - subnet-0211544261d81e46f
   environment:
     #DB_NAME: ${self:custom.secrets.${self:provider.stage}.db_name}
     DB_USER: ${self:custom.secrets.${self:provider.stage}.db_user}
